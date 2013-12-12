@@ -50,6 +50,11 @@ class NKHttpClient
   {
     if (null === $this->curl) {
       $this->curl = curl_init();
+
+      // TODO Naprawienie tego przy używaniu na produkcji
+      curl_setopt($this->curl, CURLOPT_SSL_VERIFYPEER, false);
+      curl_setopt($this->curl, CURLOPT_SSL_VERIFYHOST, false);
+
       curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($this->curl, CURLINFO_HEADER_OUT, true);
       curl_setopt($this->curl, CURLOPT_FAILONERROR, false);
