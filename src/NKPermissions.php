@@ -45,25 +45,45 @@ class NKPermissions
   const EMAIL_PROFILE        = 'EMAIL_PROFILE_ROLE';
 
   /**
+   * Umożliwia poprzez obiekty NKPhotoAlbum i NKPhoto dostęp do galerii i zdjęć użytkownika
+   */
+  const PICTURES_PROFILE     = 'PICTURES_PROFILE_ROLE';
+
+  /**
+   * Pozwala na dodawanie wpisów na tablicy zalogowanego użytkownika
+   */
+  const CREATE_SHOUTS        = 'CREATE_SHOUTS_ROLE';
+
+  /**
    * W obiekcie NKUser udostępnia pole friendsCount
    */
   const PERSON_FRIENDS       = 'PERSON_FRIENDS_ROLE';
 
   /**
-   * Umożliwia poprzez obiekty NKPhotoAlbum i NKPhoto dostęp do galerii i zdjęć użytkownika
+   * Dodawanie zdjęć do galerii użytkownika
    */
-  const PICTURES_PROFILE     = 'PICTURES_PROFILE_ROLE';
+  const ADD_PICTURES_PROFILE = 'ADD_PICTURES_PROFILE_ROLE';
+
+  /**
+   * Pobieranie grup do których należy użytkownik
+   */
+  const PERSON_GROUPS        = 'PERSON_GROUPS_ROLE';
+
+  /**
+   * Pobieranie grup których właścicielem jest użytkownik
+   */
+  const PERSON_MANAGED_GROUPS = 'PERSON_MANAGED_GROUPS_ROLE';
+
+  /**
+   * Pozwala na wysłanie zaproszenia do twojej strony
+   */
+  const SEND_INVITATION      = 'SEND_INVITATION_ROLE';
 
   /**
    * Pseudo-uprawnienie (użytkownik nie jest proszony o jego akceptację). Udostępnia ilość znajomych użytkownika
    * w obiekcie NKUser
    */
   const PERSON_FRIENDS_COUNT = 'PERSON_FRIENDS_COUNT_SELECTOR';
-
-  /**
-   * Pozwala na dodawanie wpisów na tablicy zalogowanego użytkownika
-   */
-  const CREATE_SHOUTS        = 'CREATE_SHOUTS_ROLE';
 
   /**
    * Zwraca zestaw uprawnień potrzebny do wyświetlenia podstawowych informacji o profilu, takich jak imię, nazwisko
@@ -102,13 +122,18 @@ class NKPermissions
    */
   public static function all()
   {
-    return array(
+    return array (
       self::BASIC_PROFILE,
       self::BIRTHDAY_PROFILE,
       self::PHONE_PROFILE,
       self::EMAIL_PROFILE,
       self::PICTURES_PROFILE,
       self::CREATE_SHOUTS,
+      self::PERSON_FRIENDS,
+      self::ADD_PICTURES_PROFILE,
+      self::PERSON_GROUPS,
+      self::PERSON_MANAGED_GROUPS,
+      self::SEND_INVITATION,
     );
   }
 }
